@@ -1,0 +1,208 @@
+body {
+  background-image: url(art/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+/* ==========================================================================
+   1. Base & Element Selectors
+   ========================================================================== */
+main {
+  flex: 1;
+  padding: auto;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 35px;
+  background-color: rgb(171, 123, 203);
+  border-radius: 20px;
+  border: 7px solid darkblue;
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 28px;
+  background-color: rgb(173, 220, 221);
+  border-radius: 15px;
+  border: 4px solid darkblue;
+  text-align: center;
+  padding: 12px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: darkblue;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: rgb(171, 123, 203);
+  opacity: 0.85;
+}
+
+form#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(155, 222, 213);
+  margin-top: 30px;
+  border: 4px solid rgb(35, 11, 139);
+  border-radius: 20px;
+  padding: 20px;
+  width: 600px;
+  height: 600px;
+}
+
+
+form#contact-form label {
+  display: block;
+  margin: 8px 0 4px 0;
+}
+
+form#contact-form input,
+form#contact-form textarea {
+  width: 75%;
+  padding: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+form#contact-form textarea {
+  height: 200px;
+}
+
+form#contact-form button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#messages-list {
+  background-color: rgb(155, 222, 213);
+  border: 4px solid darkblue;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  padding: 20px;
+  list-style: none;
+  width: 600px;
+  max-width: 900px;
+}
+
+/* ==========================================================================
+   2. Layout & Page Structure
+   ========================================================================== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(228, 233, 217);
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 4px solid darkblue;
+  width: auto;
+  max-width: 900px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(228, 233, 217);
+  padding: 20px 40px;
+  border-radius: 10px;
+  border: 4px solid darkblue;
+  width: auto;
+  max-width: 900px;
+}
+
+/* ==========================================================================
+   3. Component Selectors
+   ========================================================================== */
+
+.logo img,
+.art-images img {
+  width: auto;
+  border-radius: 20px;
+  border: 7px solid darkblue;
+  height: 250px;
+  margin: 20px 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+
+}
+
+
+
+.cards {
+  padding: 20px;
+  margin: 10px 20px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: rgb(121, 156, 232);
+  border: 6px solid darkblue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+
+}
+
+.card {
+  background-color: rgb(213, 230, 173);
+  border: 4px solid darkblue;
+  width: 500px;
+  margin-left: 50px;
+}
+
+.featured {
+  font-weight: bold;
+  font-size: 20px;
+}
