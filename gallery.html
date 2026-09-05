@@ -4,44 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier's Art Gallery</title>
+    <title>Geometric &amp; Creative Art Gallery | Xavier Harris</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="page">
-        <h1>Art Gallery</h1>
-        <div class="logo">
-            <img src="art/logo.png" alt="Logo">
-        </div>
         <header class="site-header">
             <nav class="nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="index.html#selected-work">Projects</a>
-                <a href="gallery.html">Gallery</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html" class="active">Gallery</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </header>
+
         <main class="main-content">
-            <section>
-                <h2>Welcome to my art gallery! Here you can find some of my favorite pieces of art.</h2>
-                <div class="art-images">
-                    <img src="art/metatron.jpg" alt="Metatron">
-                    <img src="art/flower.jpeg" alt="Flower of Life">
-                    <img src="art/isosquare.jpeg" alt="Isosquare">
-                    <img src="art/spiral.jpg" alt="Spiral">
-                    <img src="art/1494.jpg" alt="">
-                    <img src="art/1785.jpg" alt="Jellyfish">
-                </div>
+            <section class="brand-hero reveal-on-scroll">
+                <h1>Computational &amp; Sacred Geometry</h1>
+                <p class="tagline">An exploration of mathematical symmetry, harmonic ratios, and visual balance bridging
+                    geometric art and algorithmic concepts. Click any piece to inspect.</p>
             </section>
 
+            <section class="gallery-section reveal-on-scroll">
+                <div class="art-grid">
+                    <figure class="art-card reveal-on-scroll" data-src="art/metatron.jpg" data-title="Metatron's Cube"
+                        data-desc="13-circle nodal geometry connecting 78 lines of Platonic solid symmetry. Represents the fundamental geometric blueprints of three-dimensional space.">
+                        <img src="art/metatron.jpg" alt="Metatron's Cube Sacred Geometry Study" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Metatron's Cube</h4>
+                            <p>13-circle nodal geometry connecting 78 lines of Platonic solid symmetry.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="art-card reveal-on-scroll" data-src="art/flower.jpeg" data-title="Flower of Life"
+                        data-desc="Overlapping hexagonal lattice demonstrating universal geometric proportions, radial harmonics, and mathematical tessellation.">
+                        <img src="art/flower.jpeg" alt="Flower of Life Geometry Study" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Flower of Life</h4>
+                            <p>Overlapping hexagonal lattice demonstrating universal geometric proportions.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="art-card reveal-on-scroll" data-src="art/isosquare.jpeg"
+                        data-title="Isosquare Matrix"
+                        data-desc="Isometric perspective projection and dimensional illusion study exploring 2D representations of 3D spatial coordinate systems.">
+                        <img src="art/isosquare.jpeg" alt="Isometric Grid Composition" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Isosquare Matrix</h4>
+                            <p>Isometric perspective projection and dimensional illusion study.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="art-card reveal-on-scroll" data-src="art/spiral.jpg"
+                        data-title="Fibonacci Logarithmic Spiral"
+                        data-desc="Golden ratio expansion mirroring logarithmic growth rates in organic structures, galaxy formations, and algorithmic phyllotaxis.">
+                        <img src="art/spiral.jpg" alt="Fibonacci Golden Spiral" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Fibonacci Logarithmic Spiral</h4>
+                            <p>Golden ratio expansion mirroring organic logarithmic growth in nature.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="art-card reveal-on-scroll" data-src="art/1494.jpg" data-title="Prismatic Harmony"
+                        data-desc="Exploration of rotational symmetry, line weight dynamics, and geometric focal points creating depth through precise intersecting lines.">
+                        <img src="art/1494.jpg" alt="Geometric Prism Study" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Prismatic Harmony</h4>
+                            <p>Exploration of rotational symmetry, line weight dynamics, and focal points.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="art-card reveal-on-scroll" data-src="art/1785.jpg" data-title="Isometric Towers"
+                        data-desc="3D perspective space, with dark void.">
+                        <img src="art/1785.jpg" alt="Isometric Towers Art Study" loading="lazy">
+                        <figcaption class="art-caption">
+                            <h4>Isometric Towers</h4>
+                            <p>3D perspective space, with dark void.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
         </main>
+
+        <!-- Fullscreen Accessible Art Lightbox Modal -->
+        <dialog id="art-lightbox" class="lightbox-modal">
+            <div class="lightbox-content">
+                <button type="button" class="lightbox-close-btn" aria-label="Close modal">&times;</button>
+                <button type="button" class="lightbox-nav-btn lightbox-prev"
+                    aria-label="Previous artwork">&#10094;</button>
+                <div class="lightbox-img-wrap">
+                    <img class="lightbox-img" src="" alt="Artwork detail preview">
+                </div>
+                <button type="button" class="lightbox-nav-btn lightbox-next" aria-label="Next artwork">&#10095;</button>
+                <div class="lightbox-details">
+                    <h3 class="lightbox-title"></h3>
+                    <p class="lightbox-desc"></p>
+                </div>
+            </div>
+        </dialog>
+
         <footer class="site-footer">
-            <h3>Find me on social media!</h3>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/xmharris" target="_blank">GitHub</a></li>
+            <p>Built 2026, Xavier Harris. Built with modern HTML5, CSS3, JS and AI (Antigravity).</p>
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:xmharris11@gmail.com">Email</a></li>
             </ul>
         </footer>
     </div>

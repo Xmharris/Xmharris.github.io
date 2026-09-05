@@ -4,52 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Xavier</title>
+    <title>Contact Xavier Harris | Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="page">
-
-        <h1>Contact Me</h1>
-        <div class="logo">
-            <img src="art/logo.png" alt="Logo">
-        </div>
-        <header>
-            <header class="site-header">
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="index.html#selected-work">Projects</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </header>
+        <header class="site-header">
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
         </header>
+
         <main class="main-content">
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input id="name" name="name" type="text" required>
+            <section class="brand-hero reveal-on-scroll">
+                <h1>Let's Connect</h1>
+                <p class="tagline">Whether you want to discuss machine learning, software engineering, collaborative
+                    projects, or geometric art, I'd love to hear from you.</p>
+            </section>
 
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="email" required>
+            <div class="contact-container">
+                <form id="contact-form" class="reveal-on-scroll">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text" placeholder="e.g. Ada Lovelace" required>
+                    </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email" placeholder="ada@example.com" required>
+                    </div>
 
-                <button type="submit">Send</button>
-            </form>
-            <h2>Your messages:</h2>
-            <ul id="messages-list"></ul>
-            <p class="card">You can email me directly by clicking...<a href="mailto:xmharris11@gmail.com">here</a>.
-            </p>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"
+                            placeholder="Share your project idea, collaboration, or feedback..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message &rarr;</button>
+                </form>
+
+                <div class="messages-box reveal-on-scroll">
+                    <h2>Recent Inquiries</h2>
+                    <ul id="messages-list"></ul>
+                </div>
+
+                <p class="direct-email">
+                    Prefer direct email? Reach me at <a href="mailto:xmharris11@gmail.com">xmharris11@gmail.com</a>
+                </p>
+            </div>
         </main>
+
         <footer class="site-footer">
-            <h3>Find me on social media!</h3>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/xmharris" target="_blank">GitHub</a></li>
+            <p>Built 2026, Xavier Harris. Built with modern HTML5, CSS3, JS and AI (Antigravity).</p>
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:xmharris11@gmail.com">Email</a></li>
             </ul>
         </footer>
     </div>

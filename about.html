@@ -4,45 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Xavier</title>
+    <title>About Xavier Harris | Software Engineer &amp; Artist</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="page">
-        <h1>About Me</h1>
-        <div class="logo">
-            <img src="art/logo.png" alt="Logo">
-        </div>
         <header class="site-header">
             <nav class="nav">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="index.html#selected-work">Projects</a>
+                <a href="about.html" class="active">About</a>
+                <a href="projects.html">Projects</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </header>
-        <main class="main-content">
-            <img class="cards" src="selfie/creativeX.jpg" alt="Logo">
-            <p class="card">Hello! My name is Xavier Harris, and I am an aspiring artist and web developer in
-                training. I am
-                passionate about creating user-friendly websites and applications that make a positive impact on
-                people's lives. I am currently studying to acheive my BS in Computer Science. I have two amazing
-                childeren, who are my inspiration and motivation. I focus on software that helps small
-                businesses and non-profits as well as open source solutions for everyone. If you would like to
-                work with me I would love ot hear from you by clicking on the "Contact" button in the header or
-                at the bottom of the page. ~~Namaste X
-            </p>
-            <img class="cards" src="selfie/XnH.jpg" alt="Xavier and Heather">
-            <p class="card">This is my lovely wife and I. We have been by each others side for 8+ years!</p>
 
+        <main class="main-content">
+            <section class="brand-hero reveal-on-scroll">
+                <h1>About Me</h1>
+                <p class="tagline">Blending algorithmic discipline, software development, and geometric art to create
+                    impact.</p>
+            </section>
+
+            <div class="about-container">
+                <aside class="profile-card reveal-on-scroll">
+                    <img src="selfie/creativeX.jpg" alt="Xavier Harris Profile Picture">
+                    <h3>Xavier Harris</h3>
+                    <p class="tag">B.S. Computer Science Candidate</p>
+                    <p class="tagline" style="font-size: 0.95rem;">Web Developer &bull; Python Engineer &bull; Geometric
+                        Artist</p>
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get In Touch</a>
+                </aside>
+
+                <article class="bio-card reveal-on-scroll">
+                    <h2>Hello, World!</h2>
+                    <p>
+                        I am Xavier Harris, a software developer and computer science student driven by a deep passion
+                        for building high-craft, user-centered web software and algorithmic systems. Currently pursuing
+                        my Bachelor of Science in Computer Science, I focus on software solutions that empower
+                        non-profits, small businesses, and open-source communities.
+                    </p>
+                    <p>
+                        My background also bridges the artistic world. By studying sacred geometry, harmonic ratios, and
+                        isometric perspective, I bring a unique dual lens to software engineering: an appreciation for
+                        both backend algorithmic precision and the visual harmony that defines world-class user
+                        experiences.
+                    </p>
+
+                    <div class="personal-touch-card">
+                        <img src="selfie/XnH.jpg" alt="Xavier and his wife Heather">
+                        <div>
+                            <h4>Family &amp; Motivation</h4>
+                            <p>"With my wonderful partner of 8+ years and our two amazing children, my family is the
+                                bedrock of my continuous learning and drive."</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </main>
+
         <footer class="site-footer">
-            <h3>Find me on social media!</h3>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/Xmharris" target="_blank">GitHub</a></li>
+            <p>Built 2026, Xavier Harris. Built with modern HTML5, CSS3, JS and AI (Antigravity).</p>
+            <ul class="footer-links">
+                <li><a href="https://www.linkedin.com/in/xmharris" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/Xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:xmharris11@gmail.com">Email</a></li>
             </ul>
         </footer>
     </div>
