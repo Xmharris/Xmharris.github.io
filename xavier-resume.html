@@ -3,146 +3,210 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Xavier Harris - Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier Harris - Resume | Software Engineer &amp; Commercial Electrician</title>
     <link rel="stylesheet" href="resume-style.css" type="text/css">
 </head>
 
 <body>
 
-    <div class="header">
-        <div class="name">Xavier Harris</div>
-        <div class="contact-bar">
-            South Florida &bull; 561-568-1890 &bull; xmharris11@gmail.com &bull; linkedin.com/in/xmharris &bull;
-            xmharris.github.io
-        </div>
-    </div>
+    <!-- Fluid Web Navigation Toolbar (Hidden during print) -->
+    <header class="resume-nav-bar">
+        <a href="index.html" class="btn-back">&larr; Back to Portfolio</a>
+        <button type="button" onclick="window.print()" class="btn-print">&#128424; Print / Save PDF</button>
+    </header>
 
-    <div class="section-title">Professional Summary</div>
-    <div class="summary">
-        Computer Science sophomore with 8+ years of hands-on technical experience spanning low-voltage systems,
-        commercial power infrastructure, and technical operations. Proven background in complex electrical
-        diagnostics, schematic analysis, and mission-critical systems maintenance. Combining foundational
-        software engineering (Python, data structures, algorithms, Git) with deep physical infrastructure knowledge to
-        deliver high-reliability hardware diagnostics, data center operations, and technical software solutions.
-    </div>
+    <main class="paper-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Xavier Harris</h1>
+            <div class="contact-bar">
+                <span>South Florida / West Palm Beach, FL</span>
+                <span class="bullet">&bull;</span>
+                <a href="tel:5615681890">561-568-1890</a>
+                <span class="bullet">&bull;</span>
+                <a href="mailto:source@x-sys.dev">source@x-sys.dev</a>
+                <span class="bullet">&bull;</span>
+                <a href="mailto:xmharris11@gmail.com">xmharris11@gmail.com</a>
+                <span class="bullet">&bull;</span>
+                <a href="https://linkedin.com/in/xmharris" target="_blank" rel="noopener noreferrer">linkedin.com/in/xmharris</a>
+                <span class="bullet">&bull;</span>
+                <a href="https://xmharris.github.io" target="_blank" rel="noopener noreferrer">xmharris.github.io</a>
+            </div>
+        </header>
 
-    <div class="section-title">Technical Skills</div>
-    <ul class="skills-list">
-        <li><strong>Languages & Core CS:</strong> Python, C/C++, Object-Oriented Programming (OOP), HTML/CSS/JS,
-            Data Structures & Algorithms</li>
-        <li><strong>Developer Tools & Systems:</strong> Git, GitHub, Linux/Unix CLI, Firebase, Virtual Environments</li>
-        <li><strong>Hardware & Infrastructure:</strong> Critical Power Distribution (120V–480V, 3-Phase), Motor
-            Controls & Transformers, PDU/UPS systems, Low-Voltage/Structured Cabling (Cat6, Telecom),
-            Hardware Diagnostics, Server Rack-and-Stack</li>
-        <li><strong>Compliance & Safety:</strong> OSHA-10, National Electrical Code (NEC) Compliance,
-            Blueprint & Schematic Reading, Former Master & Journeyman Electrician</li>
-    </ul>
+        <!-- Professional Summary -->
+        <section>
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Computer Science student transferring to Columbia College of Missouri with 8+ years of field-tested technical experience spanning commercial electrical power infrastructure, low-voltage control systems, and mission-critical diagnostics. Proven background reading complex schematics, managing power distribution, and enforcing National Electrical Code (NEC) compliance. Combining foundational software engineering (Python, data structures, algorithms, object-oriented design, web architecture) with physical electrical infrastructure expertise to deliver high-reliability hardware diagnostics, robust software pipelines, and dependable technical systems.
+            </p>
+        </section>
 
-    <div class="section-title">Education</div>
-    <div class="item-header">
-        <span>Maestro University</span>
-        <span>Expected 2028</span>
-    </div>
-    <div class="item-sub">
-        <span>B.S. in Computer Science (Software Engineering Focus)</span>
-        <span>In Progress</span>
-    </div>
-    <ul>
-        <li><strong>Coursework:</strong> Data Structures & Algorithms, Computer Systems Architecture, Object-Oriented
-            Software Design, Database Systems, Discrete Mathematics</li>
-    </ul>
+        <!-- Technical Skills -->
+        <section>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-category">Languages &amp; Core CS:</span>
+                    <span class="skill-items">Python 3, C/C++, Object-Oriented Design (OOP), HTML5/CSS3, JavaScript (ES6+), Data Structures &amp; Algorithms, Discrete Mathematics</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Systems &amp; Developer Tools:</span>
+                    <span class="skill-items">Git, GitHub, Linux/Unix CLI, Bash, CI/CD Workflows, Edge CDN Deployment, Firebase, Web Scraping (BeautifulSoup, Requests)</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Hardware &amp; Infrastructure:</span>
+                    <span class="skill-items">Commercial Power Distribution (120V–480V, 3-Phase), Motor Controls &amp; Transformers, Switchgear, PDU/UPS Systems, Structured Cabling (Cat6, Telecom), Rack-and-Stack, Hardware Diagnostics</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Compliance &amp; Certifications:</span>
+                    <span class="skill-items">OSHA-10 Certified, National Electrical Code (NEC) Compliance, Blueprint &amp; Schematic Analysis, Former Master &amp; Journeyman Electrician</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="section-title">Technical Projects</div>
-    <div class="item-header">
-        <span>Automated Web Scraper & Data Pipeline</span>
-        <span class="tech-stack">Python, BeautifulSoup, Requests, Git</span>
-    </div>
-    <a href="https://github.com/Xmharris/SafeCheckCrawler"
-        style="color: #0F766E;">Github.com/Xmharris/SafeCheckCrawler</a>
-    <ul>
-        <li>Architected an automated scraping pipeline to extract, parse, and normalize structured data from public web
-            endpoints.</li>
-        <li>Implemented robust error handling, rate limiting, and HTTP exception logic to ensure consistent data
-            retrieval under varying network conditions.</li>
-        <li>Structured crawled datasets into standardized file formats and configured automated CLI-based execution
-            triggers.</li>
-    </ul>
+        <!-- Education -->
+        <section>
+            <h2 class="section-title">Education</h2>
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Columbia College of Missouri</span>
+                    <span class="item-date">Transferring / Starting Fall 2026 &bull; Expected 2028</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Bachelor of Science in Computer Science (Software Engineering Focus)</span>
+                    <span class="item-location">Columbia, MO / Online</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li><strong>Key Coursework:</strong> Data Structures &amp; Algorithms, Computer Systems Architecture, Object-Oriented Software Design, Database Systems, Discrete Mathematics, Operating Systems.</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="item-header">
-        <span>Personal Developer Portfolio</span>
-        <span class="tech-stack">HTML5, CSS3, JavaScript, Git, GitHub Pages</span>
-    </div>
-    <a href="https://xmharris.github.io" style="color: #0F766E;">xmharris.github.io</a>
-    <ul>
-        <li>Designed, coded, and deployed a responsive technical portfolio site hosted via GitHub Pages
-            (<code>xmharris.github.io</code>).</li>
-        <li>Configured version control workflows and automated deployment pipelines using Git and GitHub repository
-            hooks.</li>
-    </ul>
+        <!-- Technical & Infrastructure Experience -->
+        <section>
+            <h2 class="section-title">Technical &amp; Infrastructure Experience</h2>
 
-    <div class="section-title">Technical & Infrastructure Experience</div>
+            <!-- New Current Job -->
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Maeiser Electric (via QLM - Quality Labor Management)</span>
+                    <span class="item-date">09/2026 &ndash; Present</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Commercial Electrician</span>
+                    <span class="item-location">West Palm Beach, FL</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Execute commercial electrical installations, high-capacity conduit bending, and 3-phase power distribution (120V&ndash;480V) across major commercial facilities in West Palm Beach.</li>
+                    <li>Conduct circuit tracing, phase balance testing, and panel terminations under strict National Electrical Code (NEC) compliance and safety protocols.</li>
+                    <li>Collaborate with job site superintendents and general contractors to analyze engineering schematics and resolve unexpected architectural field discrepancies.</li>
+                </ul>
+            </div>
 
-    <div class="item-header">
-        <span>Wave Electric LLC</span>
-        <span>South Florida</span>
-    </div>
-    <div class="item-sub">
-        <span>Electrical & Systems Technician</span>
-        <span>08/2025 – 04/2026</span>
-    </div>
-    <ul>
-        <li>Executed hardware diagnostics, structured cabling runs, and commercial electrical troubleshooting under
-            strict NEC compliance.</li>
-        <li>Analyzed technical schematics, blueprints, and circuit topologies to verify system integrity and prevent
-            electrical faults.</li>
-        <li>Coordinated workflow logistics, material management, and clear technical communication with clients and site
-            leads.</li>
-    </ul>
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Wave Electric LLC</span>
+                    <span class="item-date">08/2025 &ndash; 04/2026</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Electrical &amp; Systems Technician</span>
+                    <span class="item-location">South Florida</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Executed hardware diagnostics, structured cabling runs, and commercial electrical troubleshooting under strict NEC standards.</li>
+                    <li>Analyzed technical schematics, blueprints, and circuit topologies to verify system integrity and prevent electrical faults.</li>
+                    <li>Coordinated workflow logistics, material management, and clear technical communication with clients and site leads.</li>
+                </ul>
+            </div>
 
-    <div class="item-header">
-        <span>XnC Unlimited LLC / Xelectricx</span>
-        <span>Lawrence, KS</span>
-    </div>
-    <div class="item-sub">
-        <span>Co-Owner & Technical Operations Lead</span>
-        <span>01/2020 – 07/2024</span>
-    </div>
-    <ul>
-        <li>Directed technical field operations and supervised 4+ journeymen and apprentice electricians across complex
-            commercial installations.</li>
-        <li>Handled diagnostic service calls, pinpointing root-cause electrical failures in high-load equipment to
-            minimize operational downtime.</li>
-        <li>Managed project lifecycles, operational compliance, licensing, and client specifications across 100+
-            projects.</li>
-    </ul>
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">XnC Unlimited LLC / Xelectricx</span>
+                    <span class="item-date">01/2020 &ndash; 07/2024</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Co-Owner &amp; Technical Operations Lead</span>
+                    <span class="item-location">Lawrence, KS</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Directed technical field operations and supervised 4+ journeymen and apprentice electricians across complex commercial installations.</li>
+                    <li>Handled diagnostic service calls, pinpointing root-cause electrical failures in high-load equipment to minimize operational downtime.</li>
+                    <li>Managed project lifecycles, operational compliance, licensing, and client specifications across 100+ projects.</li>
+                </ul>
+            </div>
 
-    <div class="item-header">
-        <span>IBEW Local 226</span>
-        <span>Topeka, KS</span>
-    </div>
-    <div class="item-sub">
-        <span>Journeyman Wireman</span>
-        <span>08/2018 – 12/2019</span>
-    </div>
-    <ul>
-        <li>Installed, calibrated, and maintained 120V–480V power distribution systems, motor control centers (MCC), and
-            switchgear.</li>
-        <li>Performed methodical circuit tracing, load-balancing tests, and continuity verifications on mission-critical
-            industrial equipment.</li>
-    </ul>
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">IBEW Local 226</span>
+                    <span class="item-date">08/2018 &ndash; 12/2019</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Journeyman Wireman</span>
+                    <span class="item-location">Topeka, KS</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Installed, calibrated, and maintained 120V&ndash;480V power distribution systems, motor control centers (MCC), and switchgear.</li>
+                    <li>Performed methodical circuit tracing, load-balancing tests, and continuity verifications on mission-critical industrial equipment.</li>
+                </ul>
+            </div>
 
-    <div class="item-header">
-        <span>Good Energy Solutions</span>
-        <span>Lawrence, KS</span>
-    </div>
-    <div class="item-sub">
-        <span>Lead Electrician</span>
-        <span>03/2017 – 08/2018</span>
-    </div>
-    <ul>
-        <li>Led installations of low-voltage telecom systems, data cabling, fire alarm circuits, and commercial PV solar
-            arrays.</li>
-    </ul>
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Good Energy Solutions</span>
+                    <span class="item-date">03/2017 &ndash; 08/2018</span>
+                </div>
+                <div class="item-sub">
+                    <span class="item-role">Lead Electrician</span>
+                    <span class="item-location">Lawrence, KS</span>
+                </div>
+                <ul class="resume-bullets">
+                    <li>Led installations of low-voltage telecom systems, data cabling, fire alarm circuits, and commercial PV solar arrays.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Projects -->
+        <section>
+            <h2 class="section-title">Technical Projects</h2>
+
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Trevalart.com &mdash; Digital Fine Art &amp; Gallery Platform</span>
+                    <span class="tech-stack">HTML5, Modern CSS3, Vanilla JS, Edge CDN, CI/CD</span>
+                </div>
+                <a href="https://trevalart.com" target="_blank" rel="noopener noreferrer" class="project-link">trevalart.com</a>
+                <ul class="resume-bullets">
+                    <li>Architected and launched a responsive fine art digital showroom featuring accessible modal lightboxes, dynamic image scaling, and asset optimization pipelines (WebP, lazy loading).</li>
+                    <li>Configured edge CDN caching, automated TLS/SSL certificate provisioning, and Git continuous deployment workflows.</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Automated Web Scraper &amp; Data Pipeline (SafeCheckCrawler)</span>
+                    <span class="tech-stack">Python, BeautifulSoup, Requests, Git</span>
+                </div>
+                <a href="https://github.com/Xmharris/SafeCheckCrawler" target="_blank" rel="noopener noreferrer" class="project-link">github.com/Xmharris/SafeCheckCrawler</a>
+                <ul class="resume-bullets">
+                    <li>Architected an automated scraping pipeline to extract, parse, and normalize structured data from public web endpoints.</li>
+                    <li>Implemented robust error handling, rate limiting, and robots.txt parsing to ensure courteous, reliable data extraction.</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="item-header">
+                    <span class="item-title">Personal Developer Portfolio</span>
+                    <span class="tech-stack">HTML5, CSS3, JavaScript, GitHub Pages</span>
+                </div>
+                <a href="https://xmharris.github.io" target="_blank" rel="noopener noreferrer" class="project-link">xmharris.github.io</a>
+                <ul class="resume-bullets">
+                    <li>Designed, coded, and deployed a modern responsive portfolio featuring an interactive HTML5 canvas and modular CSS.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
 </body>
 

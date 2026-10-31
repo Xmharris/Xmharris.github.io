@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Xavier Harris | Software Engineer &amp; Artist</title>
+    <title>About Xavier Harris | Software Engineer, Electrician &amp; Artist</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -25,33 +25,30 @@
         <main class="main-content">
             <section class="brand-hero reveal-on-scroll">
                 <h1>About Me</h1>
-                <p class="tagline">Blending algorithmic discipline, software development, and geometric art to create
-                    impact.</p>
+                <p class="tagline">Bridging software engineering, commercial electrical infrastructure, and geometric art to build resilient systems and purposeful experiences.</p>
             </section>
 
+            <!-- Profile & Bio Grid -->
             <div class="about-container">
                 <aside class="profile-card reveal-on-scroll">
                     <img src="selfie/creativeX.jpg" alt="Xavier Harris Profile Picture">
                     <h3>Xavier Harris</h3>
-                    <p class="tag">B.S. Computer Science Candidate</p>
-                    <p class="tagline" style="font-size: 0.95rem;">Web Developer &bull; Python Engineer &bull; Geometric
-                        Artist</p>
+                    <p class="tag">B.S. Computer Science &bull; Columbia College</p>
+                    <p class="tagline" style="font-size: 0.95rem;">Commercial Electrician &bull; Software Engineer &bull; Geometric Artist</p>
                     <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get In Touch</a>
+                    <a href="xavier-resume.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%;">View Resume</a>
                 </aside>
 
                 <article class="bio-card reveal-on-scroll">
-                    <h2>Hello, Collaborators!</h2>
+                    <h2>Hello, Collaborators &amp; Builders!</h2>
                     <p>
-                        I am Xavier Harris, a software developer and computer science student driven by a deep passion
-                        for building high-craft, user-centered web software and algorithmic systems. Currently pursuing
-                        my Bachelor of Science in Computer Science, I focus on software solutions that empower
-                        non-profits, small businesses, and open-source communities.
+                        I am Xavier Harris, a software developer, commercial electrician, and computer science student transferring to Columbia College of Missouri. I am dedicated to engineering high-craft, user-centered web applications, resilient backend utilities, and algorithmic systems.
                     </p>
                     <p>
-                        My background also bridges the artistic world. By studying sacred geometry, harmonic ratios, and
-                        isometric perspective, I bring a unique dual lens to software engineering: an appreciation for
-                        both backend algorithmic precision and the visual harmony that defines world-class user
-                        experiences.
+                        With over 8 years of hands-on experience across commercial electrical power infrastructure—most recently working for Maeiser Electric via QLM in West Palm Beach—I bring a distinct real-world discipline to software. In high-power distribution, there is zero tolerance for guesswork; fail-safes, systematic diagnostics, and schematic integrity are paramount. I channel that same rigorous mindset into architecting clean code, predictable state machines, and resilient data pipelines.
+                    </p>
+                    <p>
+                        My background also bridges the artistic world. By studying sacred geometry, harmonic ratios, and isometric perspective, I bring a dual lens to engineering: an appreciation for backend algorithmic precision paired with the visual harmony that defines world-class user experiences.
                     </p>
 
                     <div class="personal-touch-card">
@@ -63,6 +60,140 @@
                     </div>
                 </article>
             </div>
+
+            <!-- Blog & Thoughts Section -->
+            <section class="blog-section reveal-on-scroll" id="blog">
+                <div class="blog-header">
+                    <h2>Field Notes &amp; Thoughts</h2>
+                    <p class="section-subtitle">A journal covering my computer science studies, software projects, electrical engineering field observations, and reflections on the world.</p>
+                    
+                    <!-- Blog Category Filter Tabs -->
+                    <div class="blog-filters">
+                        <button type="button" class="blog-filter-btn active" data-category="all">All Topics</button>
+                        <button type="button" class="blog-filter-btn" data-category="studies">CS Studies &amp; Academics</button>
+                        <button type="button" class="blog-filter-btn" data-category="projects">Projects &amp; Engineering</button>
+                        <button type="button" class="blog-filter-btn" data-category="world">Thoughts on the World</button>
+                    </div>
+                </div>
+
+                <div class="blog-grid" id="blog-grid">
+                    <!-- Blog Post 1: Studies -->
+                    <article class="blog-card" data-category="studies">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag tag-studies">CS Studies &amp; Academics</span>
+                            <span class="blog-date">October 2026</span>
+                            <span class="blog-read-time">4 min read</span>
+                        </div>
+                        <h3>Transferring to Columbia College of Missouri: Deepening Foundations in Computer Science</h3>
+                        <p class="blog-excerpt">
+                            Starting this month, I am officially transferring to Columbia College of Missouri to continue my Bachelor of Science in Computer Science. Balancing commercial electrical work in South Florida with rigorous academic computer science is an intense pursuit, but one that strengthens both domains.
+                        </p>
+                        <div class="blog-full-content">
+                            <p>
+                                Stepping into this new chapter at Columbia College of Missouri allows me to concentrate deeply on core computational theory: advanced data structures, computer systems architecture, and algorithmic design. While building hands-on projects provides practical knowledge, having structured academic scrutiny sharpens efficiency and Big-O computational intuition.
+                            </p>
+                            <p>
+                                One of the most fascinating aspects of studying algorithms while simultaneously working in electrical systems is realizing how both worlds share identical paradigms: routing networks, state transitions, fault isolation, and systemic feedback loops. I look forward to documenting my coursework, problem sets, and milestones here.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <button type="button" class="blog-expand-btn">Read Full Note &rarr;</button>
+                            <div class="tech-tags">
+                                <span class="tag">Columbia College</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag accent">Academics</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2: Projects -->
+                    <article class="blog-card" data-category="projects">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag tag-projects">Projects &amp; Engineering</span>
+                            <span class="blog-date">October 2026</span>
+                            <span class="blog-read-time">5 min read</span>
+                        </div>
+                        <h3>Architecting Trevalart.com: Zero-Bloat Art Showcases with Edge CDN Caching</h3>
+                        <p class="blog-excerpt">
+                            A deep dive into how I built Trevalart.com from scratch, focusing on rapid asset loading, accessible modal lightboxes, responsive WebP image pipelines, and continuous deployment workflows.
+                        </p>
+                        <div class="blog-full-content">
+                            <p>
+                                When creating a portfolio for fine art and geometric illustrations, visual fidelity cannot be compromised, yet slow image loading kills engagement. For Trevalart.com, I intentionally avoided multi-megabyte JavaScript frameworks in favor of semantic HTML5, modern CSS Grid, and vanilla ES6+.
+                            </p>
+                            <p>
+                                By configuring an automated image optimization pipeline converting assets to WebP with responsive <code>srcset</code> fallbacks, and serving them via global edge CDN nodes, images render crisply within milliseconds. Pairing that with automated Git-driven CI/CD deployment ensures any new piece added to the repository goes live immediately with zero manual server configuration.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <button type="button" class="blog-expand-btn">Read Full Note &rarr;</button>
+                            <div class="tech-tags">
+                                <span class="tag">Trevalart.com</span>
+                                <span class="tag">Web Architecture</span>
+                                <span class="tag accent">Edge CDN</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3: World & Systems -->
+                    <article class="blog-card" data-category="world">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag tag-world">Thoughts on the World</span>
+                            <span class="blog-date">September 2026</span>
+                            <span class="blog-read-time">6 min read</span>
+                        </div>
+                        <h3>From 480V Switchgear to Clean Code: What Commercial Electrical Taught Me About Software</h3>
+                        <p class="blog-excerpt">
+                            Commercial electrical work demands total respect for physical reality: a bad wire termination or bypassed safety check causes fires. Translating that high-stakes craftsmanship into software engineering produces dramatically more dependable systems.
+                        </p>
+                        <div class="blog-full-content">
+                            <p>
+                                Working in West Palm Beach on active commercial job sites for Maeiser Electric via QLM requires meticulous coordination. You don't guess whether a 480-volt 3-phase feeder is energized; you test, verify, lock out, and trace the path methodically.
+                            </p>
+                            <p>
+                                In software development, especially in modern web frameworks, developers often treat unexpected exceptions with reckless band-aids or layers of boilerplate. But when you adopt an electrician's mindset, you design software with clean circuit breakers, bounded error boundaries, explicit failure modes, and clear diagnostic telemetry. Craftsmanship isn't just about how an app looks—it's about how gracefully it behaves under load and failure.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <button type="button" class="blog-expand-btn">Read Full Note &rarr;</button>
+                            <div class="tech-tags">
+                                <span class="tag">Engineering Mindset</span>
+                                <span class="tag">Reliability</span>
+                                <span class="tag accent">Craftsmanship</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 4: Studies & Geometry -->
+                    <article class="blog-card" data-category="world">
+                        <div class="blog-meta">
+                            <span class="blog-category-tag tag-world">Thoughts on the World</span>
+                            <span class="blog-date">August 2026</span>
+                            <span class="blog-read-time">4 min read</span>
+                        </div>
+                        <h3>Sacred Geometry &amp; The Mathematical Soul of User Interfaces</h3>
+                        <p class="blog-excerpt">
+                            Why geometric art and harmonic ratios aren't just aesthetic hobbies, but foundational principles that make software interfaces intuitively harmonious to human cognition.
+                        </p>
+                        <div class="blog-full-content">
+                            <p>
+                                When drawing isometric cubes, Metatron’s Cube, or golden spirals, you realize that visual balance is pure mathematics: proportional scales, harmonic intervals, and spatial equilibrium.
+                            </p>
+                            <p>
+                                Digital interfaces that feel 'clunky' almost always violate fundamental geometric rhythm. By bringing harmonic proportions into UI spacing systems (8-point grids, Fibonacci scale margins, and fluid clamp typography), software stops feeling like a collection of boxes and starts feeling like an organic, harmonious instrument.
+                            </p>
+                        </div>
+                        <div class="blog-card-footer">
+                            <button type="button" class="blog-expand-btn">Read Full Note &rarr;</button>
+                            <div class="tech-tags">
+                                <span class="tag">Sacred Geometry</span>
+                                <span class="tag">UI/UX</span>
+                                <span class="tag accent">Mathematics</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer">
@@ -70,8 +201,8 @@
             <ul class="footer-links">
                 <li><a href="https://www.linkedin.com/in/xmharris" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://github.com/Xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="mailto:xmharris11@gmail.com">Email</a></li>
+                <li><a href="https://github.com/xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="mailto:source@x-sys.dev">Email</a></li>
             </ul>
         </footer>
     </div>

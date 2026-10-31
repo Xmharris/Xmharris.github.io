@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Xavier Harris | Software Engineer</title>
+    <title>Contact Xavier Harris | Software Engineer &amp; Electrician</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -25,13 +25,17 @@
         <main class="main-content">
             <section class="brand-hero reveal-on-scroll">
                 <h1>Let's Connect</h1>
-                <p class="tagline">Whether you want to discuss machine learning, software engineering, collaborative
-                    projects, or geometric art, I'd love to hear from you. (This form is for example only. Please email
-                    for contact)</p>
+                <p class="tagline">Whether you want to discuss software engineering, web development, commercial electrical projects, geometric art, or report an issue, feel free to send a message below.</p>
             </section>
 
             <div class="contact-container">
-                <form id="contact-form" class="reveal-on-scroll">
+                <form id="contact-form" class="reveal-on-scroll" action="https://formsubmit.co/source@x-sys.dev" method="POST">
+                    <!-- FormSubmit configuration: sends to source@x-sys.dev and CCs xmharris11@gmail.com -->
+                    <input type="hidden" name="_cc" value="xmharris11@gmail.com">
+                    <input type="hidden" name="_subject" value="New Portfolio Inquiry (xmharris.github.io)">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input id="name" name="name" type="text" placeholder="e.g. Ada Lovelace" required>
@@ -43,12 +47,26 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message"
-                            placeholder="Share your project idea, collaboration, or feedback..." required></textarea>
+                        <label for="reason">Reason for Contact</label>
+                        <select id="reason" name="reason" required>
+                            <option value="" disabled selected>Select a reason...</option>
+                            <option value="web-dev">Web Development &amp; Software Engineering</option>
+                            <option value="electrical-work">Electrical Work &amp; Infrastructure</option>
+                            <option value="artwork">Artwork &amp; Geometric Design</option>
+                            <option value="bugs">Bug Report / Technical Issue</option>
+                            <option value="other">Other Inquiries</option>
+                        </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Send Message &rarr;</button>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"
+                            placeholder="Share your project idea, collaboration, electrical inquiry, or feedback..." required></textarea>
+                    </div>
+
+                    <div id="form-feedback" class="form-feedback" style="display: none;" role="status"></div>
+
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Send Message &rarr;</button>
                 </form>
 
                 <div class="messages-box reveal-on-scroll">
@@ -57,7 +75,7 @@
                 </div>
 
                 <p class="direct-email">
-                    Prefer direct email? Reach me at <a href="mailto:xmharris11@gmail.com">xmharris11@gmail.com</a>
+                    Prefer direct email? Reach me at <a href="mailto:source@x-sys.dev">source@x-sys.dev</a> or <a href="mailto:xmharris11@gmail.com">xmharris11@gmail.com</a>
                 </p>
             </div>
         </main>
@@ -68,7 +86,7 @@
                 <li><a href="https://www.linkedin.com/in/xmharris" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a></li>
                 <li><a href="https://github.com/xmharris" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="mailto:xmharris11@gmail.com">Email</a></li>
+                <li><a href="mailto:source@x-sys.dev">Email</a></li>
             </ul>
         </footer>
     </div>

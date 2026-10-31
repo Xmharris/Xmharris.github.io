@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initArtLightbox();
     initScrollReveal();
     initContactForm();
+    initBlogInteractions();
 });
 
 /* ==========================================================================
@@ -363,7 +364,7 @@ function initScrollReveal() {
 }
 
 /* ==========================================================================
-   5. CONTACT FORM
+   5. CONTACT FORM - LIVE EMAIL DISPATCH (source@x-sys.dev & xmharris11@gmail.com)
    ========================================================================== */
 function initContactForm() {
     const contactForm = document.querySelector('#contact-form');
@@ -371,31 +372,140 @@ function initContactForm() {
 
     const nameInput = document.querySelector('#name');
     const emailInput = document.querySelector('#email');
+    const reasonSelect = document.querySelector('#reason');
     const messageInput = document.querySelector('#message');
+    const feedbackBox = document.querySelector('#form-feedback');
+    const submitBtn = document.querySelector('#submit-btn') || contactForm.querySelector('button[type="submit"]');
     const messagesList = document.querySelector('#messages-list');
 
-    contactForm.addEventListener('submit', function (event) {
+    contactForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
+        const reason = reasonSelect ? reasonSelect.value : 'other';
+        const reasonLabel = reasonSelect && reasonSelect.selectedIndex >= 0 ? reasonSelect.options[reasonSelect.selectedIndex].text : 'General Inquiry';
         const message = messageInput.value.trim();
 
         if (!name || !email || !message) return;
 
-        if (messagesList) {
-            const item = document.createElement('li');
-            const sanitizedName = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const sanitizedEmail = email.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const sanitizedMessage = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        // UI Loading state
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending Message...';
 
-            item.innerHTML = `<strong>${sanitizedName}</strong> <span style="color: var(--text-muted); font-size: 0.85rem;">(${sanitizedEmail})</span><p style="margin-top: 6px; color: var(--text-secondary);">${sanitizedMessage}</p>`;
-            messagesList.prepend(item);
+        if (feedbackBox) {
+            feedbackBox.style.display = 'none';
+            feedbackBox.className = 'form-feedback';
         }
 
-        // Clear inputs
-        nameInput.value = '';
-        emailInput.value = '';
-        messageInput.value = '';
+        try {
+            // Live dispatch to source@x-sys.dev via FormSubmit API with CC to xmharris11@gmail.com
+            const response = await fetch('https://formsubmit.co/ajax/source@x-sys.dev', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    reason: reasonLabel,
+                    message: message,
+                    _cc: 'xmharris11@gmail.com',
+                    _subject: `New Portfolio Inquiry [${reasonLabel}]: ${name}`
+                })
+            });
+
+            if (response.ok) {
+                if (feedbackBox) {
+                    feedbackBox.className = 'form-feedback success';
+                    feedbackBox.style.display = 'block';
+                    feedbackBox.innerHTML = `<strong>Message Sent!</strong> Thank you, ${name.replace(/</g, "&lt;")}. Your message has been routed to <code>source@x-sys.dev</code> and <code>xmharris11@gmail.com</code>. I will be in touch shortly.`;
+                }
+
+                if (messagesList) {
+                    const item = document.createElement('li');
+                    const sanitizedName = name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    const sanitizedEmail = email.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    const sanitizedMessage = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                    const sanitizedReason = reasonLabel.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+                    item.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <strong>${sanitizedName}</strong>
+                        <span class="tag accent" style="font-size: 0.72rem; padding: 2px 8px;">${sanitizedReason}</span>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.85rem;">${sanitizedEmail}</span>
+                    <p style="margin-top: 6px; color: var(--text-secondary);">${sanitizedMessage}</p>`;
+                    messagesList.prepend(item);
+                }
+
+                // Reset form fields
+                nameInput.value = '';
+                emailInput.value = '';
+                if (reasonSelect) reasonSelect.selectedIndex = 0;
+                messageInput.value = '';
+            } else {
+                throw new Error('Service responded with non-200 code');
+            }
+        } catch (error) {
+            console.error('Contact form transmission error:', error);
+            if (feedbackBox) {
+                feedbackBox.className = 'form-feedback error';
+                feedbackBox.style.display = 'block';
+                const mailtoUrl = `mailto:source@x-sys.dev?cc=xmharris11@gmail.com&subject=${encodeURIComponent('Inquiry: ' + reasonLabel)}&body=${encodeURIComponent(message)}`;
+                feedbackBox.innerHTML = `<strong>Submission note:</strong> Direct automated dispatch encountered a network interruption. Please <a href="${mailtoUrl}" style="color: #67e8f9; text-decoration: underline; font-weight: 600;">click here to email directly</a> to <code>source@x-sys.dev</code> &amp; <code>xmharris11@gmail.com</code>.`;
+            }
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
     });
+}
+
+/* ==========================================================================
+   6. BLOG SECTION INTERACTIONS (CATEGORY FILTERING & EXPANDABLE READS)
+   ========================================================================== */
+function initBlogInteractions() {
+    const filterButtons = document.querySelectorAll('.blog-filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const expandButtons = document.querySelectorAll('.blog-expand-btn');
+
+    // 1. Category Filtering
+    if (filterButtons.length && blogCards.length) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetCategory = btn.getAttribute('data-category');
+
+                // Update active tab styling
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show/hide matching articles
+                blogCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (targetCategory === 'all' || cardCategory === targetCategory) {
+                        card.classList.remove('is-hidden');
+                    } else {
+                        card.classList.add('is-hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // 2. Expand / Collapse Full Blog Notes
+    if (expandButtons.length) {
+        expandButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.blog-card');
+                if (!card) return;
+                const fullContent = card.querySelector('.blog-full-content');
+                if (!fullContent) return;
+
+                const isOpen = fullContent.classList.toggle('is-open');
+                btn.innerHTML = isOpen ? 'Collapse Note &uarr;' : 'Read Full Note &rarr;';
+            });
+        });
+    }
 }
