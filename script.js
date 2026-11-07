@@ -280,7 +280,7 @@ function initArtLightbox() {
         } else {
             modal.setAttribute('open', '');
         }
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('modal-open');
     }
 
     function closeLightbox() {
@@ -289,7 +289,7 @@ function initArtLightbox() {
         } else {
             modal.removeAttribute('open');
         }
-        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
     }
 
     function showNext() {
@@ -395,7 +395,6 @@ function initContactForm() {
         submitBtn.innerHTML = 'Sending Message...';
 
         if (feedbackBox) {
-            feedbackBox.style.display = 'none';
             feedbackBox.className = 'form-feedback';
         }
 
@@ -420,7 +419,6 @@ function initContactForm() {
             if (response.ok) {
                 if (feedbackBox) {
                     feedbackBox.className = 'form-feedback success';
-                    feedbackBox.style.display = 'block';
                     feedbackBox.innerHTML = `<strong>Message Sent!</strong> Thank you, ${name.replace(/</g, "&lt;")}. Your message has been routed to <code>source@x-sys.dev</code> and <code>xmharris11@gmail.com</code>. I will be in touch shortly.`;
                 }
 
@@ -431,12 +429,12 @@ function initContactForm() {
                     const sanitizedMessage = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
                     const sanitizedReason = reasonLabel.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-                    item.innerHTML = `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    item.innerHTML = `<div class="inquiry-header">
                         <strong>${sanitizedName}</strong>
-                        <span class="tag accent" style="font-size: 0.72rem; padding: 2px 8px;">${sanitizedReason}</span>
+                        <span class="tag accent inquiry-tag">${sanitizedReason}</span>
                     </div>
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">${sanitizedEmail}</span>
-                    <p style="margin-top: 6px; color: var(--text-secondary);">${sanitizedMessage}</p>`;
+                    <span class="inquiry-email">${sanitizedEmail}</span>
+                    <p class="inquiry-message">${sanitizedMessage}</p>`;
                     messagesList.prepend(item);
                 }
 
@@ -452,9 +450,8 @@ function initContactForm() {
             console.error('Contact form transmission error:', error);
             if (feedbackBox) {
                 feedbackBox.className = 'form-feedback error';
-                feedbackBox.style.display = 'block';
                 const mailtoUrl = `mailto:source@x-sys.dev?cc=xmharris11@gmail.com&subject=${encodeURIComponent('Inquiry: ' + reasonLabel)}&body=${encodeURIComponent(message)}`;
-                feedbackBox.innerHTML = `<strong>Submission note:</strong> Direct automated dispatch encountered a network interruption. Please <a href="${mailtoUrl}" style="color: #67e8f9; text-decoration: underline; font-weight: 600;">click here to email directly</a> to <code>source@x-sys.dev</code> &amp; <code>xmharris11@gmail.com</code>.`;
+                feedbackBox.innerHTML = `<strong>Submission note:</strong> Direct automated dispatch encountered a network interruption. Please <a href="${mailtoUrl}" class="form-feedback-link">click here to email directly</a> to <code>source@x-sys.dev</code> &amp; <code>xmharris11@gmail.com</code>.`;
             }
         } finally {
             submitBtn.disabled = false;

@@ -76,6 +76,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /* ==========================================================================
    3. LAYOUT & CONTAINER
    ========================================================================== */
@@ -110,8 +114,8 @@ body {
   width: 100%;
   max-width: 960px;
   background: var(--color-surface-glass);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
@@ -234,8 +238,8 @@ h2 {
 
 .project-card {
   background: var(--color-surface-card);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   padding: 28px;
@@ -266,6 +270,11 @@ h2 {
   box-shadow: var(--shadow-glow), var(--shadow-md);
 }
 
+.project-card.featured {
+  border-color: rgba(6, 182, 212, 0.45);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.2);
+}
+
 .project-card:hover::before {
   opacity: 1;
 }
@@ -289,6 +298,13 @@ h2 {
   gap: 8px;
 }
 
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .tag {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -303,6 +319,10 @@ h2 {
   background: rgba(6, 182, 212, 0.15);
   color: #22d3ee;
   border-color: rgba(6, 182, 212, 0.3);
+}
+
+.tag.tag-featured {
+  font-weight: 700;
 }
 
 .project-actions {
@@ -347,6 +367,18 @@ h2 {
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #0891b2 0%, #4f46e5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
 }
 
 /* ==========================================================================
@@ -447,6 +479,14 @@ h2 {
   border-radius: 50%;
   border: 3px solid var(--accent-primary);
   box-shadow: 0 0 24px rgba(99, 102, 241, 0.4);
+}
+
+.profile-card .tagline {
+  font-size: 0.95rem;
+}
+
+.profile-card .btn {
+  width: 100%;
 }
 
 .bio-card {
@@ -589,11 +629,17 @@ form#contact-form select option {
 }
 
 .form-feedback {
+  display: none;
   padding: 14px 18px;
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
   line-height: 1.5;
   transition: all var(--transition-smooth);
+}
+
+.form-feedback.success,
+.form-feedback.error {
+  display: block;
 }
 
 .form-feedback.success {
@@ -606,6 +652,13 @@ form#contact-form select option {
   background: rgba(239, 68, 68, 0.15);
   border: 1px solid rgba(239, 68, 68, 0.4);
   color: #f87171;
+}
+
+.form-feedback a,
+.form-feedback-link {
+  color: #67e8f9;
+  text-decoration: underline;
+  font-weight: 600;
 }
 form#contact-form button[type="submit"]:hover {
   transform: translateY(-2px);
@@ -634,6 +687,28 @@ form#contact-form button[type="submit"]:hover {
   padding: 12px 16px;
   border-radius: var(--radius-sm);
   font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.inquiry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.inquiry-tag {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+}
+
+.inquiry-email {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.inquiry-message {
+  margin-top: 6px;
   color: var(--text-secondary);
 }
 
@@ -708,8 +783,8 @@ form#contact-form button[type="submit"]:hover {
   padding: 48px 24px;
   background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.12) 0%, rgba(16, 24, 40, 0.5) 70%, transparent 100%);
   border: 1px solid var(--border-glass);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 #hero-canvas {
@@ -793,8 +868,8 @@ dialog.lightbox-modal {
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   background: rgba(10, 14, 23, 0.96);
-  backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
   color: var(--text-primary);
   max-width: 90vw;
   max-height: 90vh;
@@ -806,8 +881,8 @@ dialog.lightbox-modal {
 
 dialog.lightbox-modal::backdrop {
   background: rgba(4, 6, 12, 0.85);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 .lightbox-content {
@@ -1052,6 +1127,13 @@ dialog.lightbox-modal::backdrop {
 
 .breakdown-list li strong {
   color: #f1f5f9;
+}
+
+.projects-subheading {
+  margin: 40px 0 20px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--text-primary);
 }
 
 /* ==========================================================================

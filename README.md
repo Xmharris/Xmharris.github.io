@@ -1,5 +1,3 @@
-# Web Playground & Developer Portfolio
-
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -21,24 +19,30 @@ The site is designed using custom vanilla CSS design tokens, smooth glassmorphic
 ## ✨ Key Features
 
 ### 🌌 Interactive Sacred Geometry & Neural Canvas
+
 - **Dynamic Physics & Harmonic Pulse**: Custom 2D Canvas engine (`script.js`) rendering an interactive network of nodal points pulsing to sacred harmonic ratios.
 - **Cursor Force Vectoring**: Dynamic particle attraction on mouse proximity.
 - **High-DPI Retina Scaling**: Native viewport resolution matching for sharp rendering across all displays.
 
 ### 🃏 3D Specular Card Physics
+
 - **Real-Time Tilt Effects**: Mouse-driven 3D rotation (`rotateX` / `rotateY`) on project and art cards with dynamic glare highlights.
 
 ### 🖼️ Sacred & Computational Geometry Art Gallery
-- **Interactive Lightbox Modal**: High-resolution gallery viewer displaying geometric artworks including *Metatron's Cube*, *Flower of Life*, *Fibonacci Logarithmic Spiral*, and *Isosquare Matrix*.
+
+- **Interactive Lightbox Modal**: High-resolution gallery viewer displaying geometric artworks including _Metatron's Cube_, _Flower of Life_, _Fibonacci Logarithmic Spiral_, and _Isosquare Matrix_.
 - **Lazy Loading & Performance**: Native image lazy-loading and responsive image cards.
 
 ### 💼 Software Engineering Showcase
+
 Featured highlights of software engineering and open-source Python repositories:
+
 - **[Look What I Can Do!](https://github.com/Xmharris/Look_What_I_Can_Do)**: Modular Python automation scripts, algorithms, and data utilities.
 - **[D&D Python Framework](https://github.com/Xmharris/Python_projects/tree/version_one/Dnd_Python)**: An OOP pedagogical game engine teaching programming concepts through RPG mechanics.
 - **[SafeCheckCrawler](https://github.com/Xmharris/SafeCheckCrawler)**: Ethical web crawler built with `robots.txt` compliance and politeness rate-limiting.
 
 ### 📱 Responsive & Accessible UI
+
 - **IntersectionObserver Animations**: Smooth reveal-on-scroll effects for elements as they enter the viewport.
 - **Accessible & Semantic HTML5**: Fully structured semantic tags, focus styling, and mobile-friendly navigation.
 
@@ -63,12 +67,12 @@ portfolioAi/
 
 ## 🛠️ Tech Stack
 
-| Domain | Technology | Description |
-| :--- | :--- | :--- |
-| **Frontend Core** | HTML5 | Semantic markup, metadata optimization, accessibility |
-| **Styling** | Vanilla CSS3 | CSS Variables, Flexbox, Grid, Glassmorphism, Keyframes |
-| **Interactivity** | JavaScript (ES6+) | Canvas API, DOM Manipulation, `IntersectionObserver` |
-| **Languages** | Python 3 | Backend scripting, scrapers, and game engines featured in portfolio |
+| Domain            | Technology        | Description                                                         |
+| :---------------- | :---------------- | :------------------------------------------------------------------ |
+| **Frontend Core** | HTML5             | Semantic markup, metadata optimization, accessibility               |
+| **Styling**       | Vanilla CSS3      | CSS Variables, Flexbox, Grid, Glassmorphism, Keyframes              |
+| **Interactivity** | JavaScript (ES6+) | Canvas API, DOM Manipulation, `IntersectionObserver`                |
+| **Languages**     | Python 3          | Backend scripting, scrapers, and game engines featured in portfolio |
 
 ---
 
@@ -77,7 +81,9 @@ portfolioAi/
 No build step or package manager is required to run the portfolio.
 
 ### Option 1: Open Directly in Browser
+
 Navigate into the `portfolio-project` directory and open `portfolio.html` in your browser of choice:
+
 ```bash
 # Double-click portfolio.html or open via command line
 start portfolio-project/portfolio.html   # Windows
@@ -85,11 +91,14 @@ start portfolio-project/portfolio.html   # Windows
 ```
 
 ### Option 2: Live Server / Local HTTP Server
+
 Using Python's built-in HTTP server:
+
 ```bash
 # Run from repository root
 python -m http.server 8000
 ```
+
 Then visit `http://localhost:8000/portfolio-project/portfolio.html` in your browser.
 
 ---
